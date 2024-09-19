@@ -1,0 +1,184 @@
+/* Estilos generales y contenedor principal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: url('kiara.jpeg') no-repeat center center fixed; /* Imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  }
+  
+  /* Superponer un fondo adicional con la imagen de ella */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('foto_de_ella.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.4; /* Ajusta la opacidad según lo que prefieras */
+    pointer-events: none;
+  }
+  
+  .snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  .snowflake {
+    position: absolute;
+    background: #87CEFA; /* Color celeste para la nieve */
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall linear infinite;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Otros estilos del contenido */
+  .container {
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    position: relative;
+  }
+  
+  /* Títulos y subtítulos */
+  h1 {
+    font-size: 3rem; /* Tamaño de fuente aumentado */
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem; /* Tamaño de fuente aumentado */
+    margin-bottom: 40px;
+  }
+  
+  /* Corazón muy pequeño con latido */
+  .heart {
+    position: relative;
+    width: 30px; /* Tamaño reducido */
+    height: 30px; /* Tamaño reducido */
+    background-color: #ff6b6b;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+    animation: beat 1s infinite;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 30px; /* Tamaño reducido */
+    height: 30px; /* Tamaño reducido */
+    background-color: #ff6b6b;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -15px;
+    left: 0;
+  }
+  
+  .heart::after {
+    top: 0;
+    left: 15px;
+  }
+  
+  button {
+    background-color: #fff;
+    color: #ff6b6b;
+    border: none;
+    padding: 15px 30px; /* Aumentado para mayor visibilidad */
+    border-radius: 25px;
+    font-size: 1.5rem; /* Tamaño de fuente aumentado */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff6b6b;
+    color: #fff;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 15px; /* Aumentado para mayor visibilidad */
+    border-radius: 10px;
+    border: none;
+    resize: vertical;
+    font-size: 1.2rem; /* Tamaño de fuente aumentado */
+  }
+  
+  #message, #game-result, #response-message {
+    margin-top: 20px;
+    font-size: 2rem; /* Tamaño de fuente aumentado */
+    display: none;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .game-section, .response-section {
+    margin-top: 40px;
+  }
+  
+  .game {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .heart-option {
+    width: 80px; /* Tamaño aumentado para mayor visibilidad */
+    height: 80px; /* Tamaño aumentado para mayor visibilidad */
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .heart-option:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Animación de latido del corazón */
+  @keyframes beat {
+    0%, 100% {
+      transform: scale(1) rotate(-45deg);
+    }
+    50% {
+      transform: scale(1.2) rotate(-45deg);
+    }
+  }
+  

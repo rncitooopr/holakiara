@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Mi Amor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Efecto de nieve cayendo desde arriba -->
+  <div class="snow"></div>
+
+  <div class="container">
+    <div class="content">
+      <h1>Para Mi Amor</h1>
+      <p class="subtitle">Cada latido de mi corazón es para ti</p>
+      <div class="heart"></div>
+      <button onclick="revealMessage()">Un Mensaje Especial</button>
+      <p id="message" class="hidden">Siempre estaré a tu lado, te amo con todo mi ser 💖</p>
+      
+      <!-- Sección de Juegos -->
+      <div class="game-section">
+        <h2>Un Pequeño Juego</h2>
+        <p>Haz clic en el corazón correcto</p>
+        <div class="game">
+          <div class="heart-option" onclick="checkHeart(true)"></div>
+          <div class="heart-option" onclick="checkHeart(false)"></div>
+          <div class="heart-option" onclick="checkHeart(false)"></div>
+        </div>
+        <p id="game-result" class="hidden">¡Correcto! ❤️</p>
+      </div>
+
+      <!-- Sección Respuesta -->
+      <div class="response-section">
+        <h2>Tu Respuesta</h2>
+        <p>Escribe tu respuesta aquí:</p>
+        <textarea id="response" rows="5" placeholder="Escribe algo bonito..."></textarea>
+        <button onclick="submitResponse()">Enviar Respuesta</button>
+        <p id="response-message" class="hidden">¡Gracias por tu hermosa respuesta! 🌹</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="snow.js"></script> <!-- Incluye el nuevo archivo JavaScript -->
+</body>
+</html>
